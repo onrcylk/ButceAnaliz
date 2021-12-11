@@ -1,0 +1,59 @@
+﻿@model ButceAnaliz.Models.Gider
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Gider</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ElektirikFatura" class="control-label"></label>
+                <input asp-for="ElektirikFatura" class="form-control" />
+                <span asp-validation-for="ElektirikFatura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SuFatura" class="control-label"></label>
+                <input asp-for="SuFatura" class="form-control" />
+                <span asp-validation-for="SuFatura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoğalgazFatura" class="control-label"></label>
+                <input asp-for="DoğalgazFatura" class="form-control" />
+                <span asp-validation-for="DoğalgazFatura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternetFatura" class="control-label"></label>
+                <input asp-for="InternetFatura" class="form-control" />
+                <span asp-validation-for="InternetFatura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonFatura" class="control-label"></label>
+                <input asp-for="TelefonFatura" class="form-control" />
+                <span asp-validation-for="TelefonFatura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KrediTutar" class="control-label"></label>
+                <input asp-for="KrediTutar" class="form-control" />
+                <span asp-validation-for="KrediTutar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,54 @@
+﻿@model ButceAnaliz.Models.Gider
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Gider</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ElektirikFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ElektirikFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SuFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SuFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoğalgazFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoğalgazFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InternetFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InternetFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelefonFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelefonFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KrediTutar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KrediTutar)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

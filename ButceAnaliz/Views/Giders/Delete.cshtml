@@ -1,0 +1,57 @@
+﻿@model ButceAnaliz.Models.Gider
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Gider</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ElektirikFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ElektirikFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SuFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SuFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoğalgazFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoğalgazFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InternetFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InternetFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelefonFatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelefonFatura)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KrediTutar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KrediTutar)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
