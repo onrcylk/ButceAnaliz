@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ButceAnaliz.Models;
 
 namespace ButceAnaliz.Models
 {
@@ -18,6 +19,7 @@ namespace ButceAnaliz.Models
         public virtual DbSet<Gelir> Gelir { get; set; }
         public virtual DbSet<Kullanıcı> Kullanıcı { get; set; }
         public virtual DbSet<Yatırım> Yatırım { get; set; }
+        public DbSet<ButceAnaliz.Models.Login> Login { get; set; }
        
 
     }

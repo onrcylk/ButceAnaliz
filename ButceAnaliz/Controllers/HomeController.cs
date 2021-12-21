@@ -22,7 +22,11 @@ namespace ButceAnaliz.Controllers
         {
             return View();
         }
-      
+        public IActionResult Login()
+        {
+            return PartialView(@"~/Views/Shared/_LoginPartial.cshtml");
+        }
+
         public IActionResult Privacy()
         {
             return View();
