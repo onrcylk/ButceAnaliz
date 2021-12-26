@@ -64,7 +64,7 @@ namespace ButceAnaliz
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Privacy}/{id?}");
+                    pattern: "{controller=Home}/{action=Login}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

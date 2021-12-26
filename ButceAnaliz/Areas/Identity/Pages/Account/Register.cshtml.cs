@@ -93,7 +93,8 @@ namespace ButceAnaliz.Areas.Identity.Pages.Account
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return Redirect("/Identity/Account/Login");
+                       // return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
                     }
                     else
                     {
@@ -108,7 +109,8 @@ namespace ButceAnaliz.Areas.Identity.Pages.Account
             }
 
             // If we got this far, something failed, redisplay form
-            return Page();
+            //return Page();
+            return Redirect("/Identity/Account/Login");
         }
     }
 }

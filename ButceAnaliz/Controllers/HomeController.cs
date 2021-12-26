@@ -1,6 +1,7 @@
 ﻿using ButceAnaliz.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,14 +22,26 @@ namespace ButceAnaliz.Controllers
         public IActionResult Index()
         {
             return View();
+            
         }
         public IActionResult Login()
         {
-            return PartialView(@"~/Views/Shared/_LoginPartial.cshtml");
+            return Redirect("/Identity/Account/Login");
         }
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        public IActionResult BinanceApi()
+        {
+            //var client = new RestClient("https://api.binance.com/api/v3/exchangeInfo");
+            //client.Timeout = -1;
+            //var request = new RestRequest(Method.GET);
+            //request.AddHeader("Authorization", "IVyteJEo3f5qTzePrzap3LoJMOiDXjUZKySZ738bxlaZ17E1ULlIysRjSLZi0FwL");
+            //IRestResponse response = client.Execute(request);
+            //return View(response.Content);
             return View();
         }
 

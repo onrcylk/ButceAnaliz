@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Frontend\build\js\Binance.js" />
+    <Content Remove="wwwroot\Frontend\build\scss\binance.scss" />
+    <Content Remove="wwwroot\Frontend\dist\css\adminlte - Copy.css.map" />
+    <Content Remove="wwwroot\Frontend\dist\css\adminlte - Copy.min.css" />
+    <Content Remove="wwwroot\Frontend\dist\css\adminlte - Copy.min.css.map" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\Frontend\build\config\postcss.config.js" />
     <None Include="wwwroot\Frontend\build\config\rollup.config.js" />
     <None Include="wwwroot\Frontend\build\js\AdminLTE.js" />
@@ -23,12 +31,14 @@
     <None Include="wwwroot\Frontend\build\js\SidebarSearch.js" />
     <None Include="wwwroot\Frontend\build\js\Toasts.js" />
     <None Include="wwwroot\Frontend\build\js\TodoList.js" />
+    <None Include="wwwroot\js\Binance.js" />
     <None Include="wwwroot\Frontend\build\js\Treeview.js" />
     <None Include="wwwroot\Frontend\build\npm\DocsPlugins.js" />
     <None Include="wwwroot\Frontend\build\npm\DocsPublish.js" />
     <None Include="wwwroot\Frontend\build\npm\Plugins.js" />
     <None Include="wwwroot\Frontend\build\npm\Publish.js" />
     <None Include="wwwroot\Frontend\build\npm\vnu-jar.js" />
+    <None Include="wwwroot\css\binance.scss" />
     <None Include="wwwroot\Frontend\build\scss\adminlte.scss" />
     <None Include="wwwroot\Frontend\build\scss\mixins\_accent.scss" />
     <None Include="wwwroot\Frontend\build\scss\mixins\_animations.scss" />
@@ -2104,6 +2114,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="RestSharp" Version="106.15.0" />
   </ItemGroup>
 
 </Project>
