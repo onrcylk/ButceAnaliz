@@ -1,0 +1,126 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: steelblue;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI';
+}
+
+.form {
+    background-color: whitesmoke !important;
+    border: 2px solid rgb(220, 220, 220);
+    width: 600px;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -220px;
+    padding: 20px;
+}
+
+
+.form1 {
+    margin: 0px auto;
+    width: 400px;
+    display: block;
+}
+
+.doviz_cevirici ul {
+    border: none !important;
+}
+
+.doviz_cevirici li {
+    margin: 0px auto;
+    display: block;
+    overflow: hidden;
+}
+
+.doviz_cevirici {
+    font-size: 14px;
+    color: steelblue;
+}
+
+    .doviz_cevirici input[type=text] {
+        width: 300px;
+        padding: 6px 10px;
+        margin: 18px 0;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+
+        .doviz_cevirici input[type=text]:focus {
+            border: 3px solid steelblue;
+        }
+
+.form:focus-within {
+    box-shadow: 10px 5px 5px rgb(220, 220, 220);
+}
+
+.doviz_cevirici select {
+    width: 300px;
+    padding: 6px 10px;
+    margin-bottom: 18px;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+    .doviz_cevirici select:focus {
+        border: 3px solid steelblue;
+    }
+
+#birimleri_ters_cevir input[type=button] {
+    padding: 6px 10px;
+    margin-bottom: 18px;
+    background-color: transparent !important;
+    color: steelblue;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 3px solid #ccc;
+}
+
+    #birimleri_ters_cevir input[type=button]:hover {
+        color: white !important;
+        font-weight: bold;
+        background-color: steelblue !important;
+        cursor: pointer;
+    }
+
+.alisatis {
+    font-weight: bold;
+    font-size: 14px;
+    color: steelblue;
+    text-align: left;
+}
+
+    .alisatis input[type=radio] {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 18px;
+    }
+
+.sonuc input[type=text] {
+    width: 300px;
+}
+
+a:link {
+    font-size: 14px;
+    font-weight: bold;
+    color: steelblue;
+    text-decoration: none !important;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+a:visited {
+    text-decoration: none;
+    color: steelblue;
+}
