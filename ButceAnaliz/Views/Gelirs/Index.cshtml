@@ -1,15 +1,21 @@
 ﻿@model IEnumerable<ButceAnaliz.Models.Gelir>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table-responsive-xl">
     <thead>
         <tr>
             <th>
@@ -39,3 +45,5 @@
 }
     </tbody>
 </table>
+</body>
+</html>

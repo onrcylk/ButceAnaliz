@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ButceAnaliz.Models;
 
+
 namespace ButceAnaliz.Controllers
 {
     public class GelirsController : Controller
@@ -21,7 +22,8 @@ namespace ButceAnaliz.Controllers
         // GET: Gelirs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Gelir.Where(x => x.Kullanıcı.Id == x.Id).ToListAsync());
+            var gelirUser = _context.Users.FirstOrDefault(x => x.Email == User.Identity.Name);
+            return View(await _context.Gelir.Where(x=>x.User==gelirUser).ToListAsync());
         }
 
         // GET: Gelirs/Details/5
@@ -53,10 +55,12 @@ namespace ButceAnaliz.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Maas,YatırımKar")] Gelir gelir)
+        public async Task<IActionResult> Create([Bind("Id,Maas,YatırımKar,User.UserName")] Gelir gelir)
         {
             if (ModelState.IsValid)
             {
+                var gelirUser=_context.Users.FirstOrDefault(x=>x.Email==User.Identity.Name);
+                gelir.User = gelirUser;
                 _context.Add(gelir);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
