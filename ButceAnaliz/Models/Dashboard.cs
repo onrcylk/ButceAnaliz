@@ -10,6 +10,5 @@ namespace ButceAnaliz.Models
         public int Id { get; set; }
         public int GelenToplamTutar { get; set; }
         public int GidenToplamTutar { get; set; }
-        public Kullanıcı Kullanıcı { get; set; }
     }
 }

@@ -31,25 +31,21 @@ namespace ButceAnaliz.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+               return NotFound();
             }
-
             var gelir = await _context.Gelir
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (gelir == null)
             {
-                return NotFound();
+              return NotFound();
             }
-
             return View(gelir);
         }
-
         // GET: Gelirs/Create
         public IActionResult Create()
         {
             return View();
         }
-
         // POST: Gelirs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.

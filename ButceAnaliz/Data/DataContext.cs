@@ -17,7 +17,6 @@ namespace ButceAnaliz.Models
         public virtual DbSet<Dashboard> Dashboards { get; set; }
         public virtual DbSet<Gider> Gider { get; set; }
         public virtual DbSet<Gelir> Gelir { get; set; }
-        public virtual DbSet<Kullanıcı> Kullanıcı { get; set; }
         public virtual DbSet<Yatırım> Yatırım { get; set; }
         public DbSet<ButceAnaliz.Models.Login> Login { get; set; }
        

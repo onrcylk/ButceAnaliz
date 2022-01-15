@@ -21,7 +21,8 @@ namespace ButceAnaliz.Controllers
         // GET: Giders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Gider.ToListAsync());
+            var gelirUser = _context.Users.FirstOrDefault(x => x.Email == User.Identity.Name);
+            return View(await _context.Gider.Where(x => x.User == gelirUser).ToListAsync());
         }
 
         // GET: Giders/Details/5
@@ -57,6 +58,8 @@ namespace ButceAnaliz.Controllers
         {
             if (ModelState.IsValid)
             {
+                var gelirUser = _context.Users.FirstOrDefault(x => x.Email == User.Identity.Name);
+                gider.User = gelirUser;
                 _context.Add(gider);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

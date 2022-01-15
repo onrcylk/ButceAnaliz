@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<ButceAnaliz.Models.Gelir>
 
+
+
 @{
     Layout = null;
 }
@@ -10,40 +12,103 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/css/income.css" rel="stylesheet" />
 </head>
 <body>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table-responsive-xl">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Maas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.YatırımKar)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Maas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YatırımKar)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+    <div class="top">
+        <div class="budget">
+            <div class="budget__title">
+                Bütçe Hesaplama <span class="budget__title--month">%Month%</span>:
+            </div>
+
+            <div class="budget__value">+ 2,345.64</div>
+
+            <div class="budget__income clearfix">
+                <div class="budget__income--text">Gelir</div>
+                <div class="right">
+                    <div class="budget__income--value">+ 4,300.00</div>
+                    <div class="budget__income--percentage">&nbsp;</div>
+                </div>
+            </div>
+
+            <div class="budget__expenses clearfix">
+                <div class="budget__expenses--text">Gider</div>
+                <div class="right clearfix">
+                    <div class="budget__expenses--value">- 1,954.36</div>
+                    <div class="budget__expenses--percentage">45%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottom">
+        <div class="add">
+            <div class="add__container">
+                <select class="add__type">
+                    <option value="inc" selected>+</option>
+                    <option value="exp">-</option>
+                </select>
+                <input type="text" class="add__description" placeholder="Gelir/Gider Türü">
+                <input type="number" class="add__value" placeholder="Tutar">
+                <button class="add__btn">Ekle</button>
+            </div>
+        </div>
+
+        <div class="container clearfix">
+            <div class="income">
+                <h2 class="income__title">Gelir</h2>
+
+                <div class="income__list">
+                </div>
+            </div>
+
+
+            <div class="expenses">
+                <h2 class="expenses__title">Gider</h2>
+
+                <div class="expenses__list">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/income.js"></script>
 </body>
+@*<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table-responsive-xl">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Maas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.YatırımKar)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Maas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YatırımKar)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+    </body>*@
+
 </html>

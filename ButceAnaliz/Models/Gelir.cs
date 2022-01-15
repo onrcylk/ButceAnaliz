@@ -11,7 +11,6 @@ namespace ButceAnaliz.Models
         public int Id { get; set; }
         public int Maas { get; set; }
         public int YatırımKar { get; set; }
-        public Kullanıcı Kullanıcı { get; set; }
         public virtual IdentityUser User { get; set; }
     }
 }
