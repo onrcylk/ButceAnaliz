@@ -42,8 +42,8 @@ body {
 
 .top {
     height: 40vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("http://www.pamaciba.lv/wp-content/uploads/2014/09/ka-aprekinat-pvn.jpg");
-    background-size: cover;
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("http://www.pamaciba.lv/wp-content/uploads/2014/09/ka-aprekinat-pvn.jpg");*/
+    background-image: url('683992.jpg');
     background-position: center;
     position: relative;
 }

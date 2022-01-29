@@ -1,5 +1,11 @@
-﻿// BUDGET CONTROLLER
+﻿
+// BUDGET CONTROLLER
 var budgetController = (function () {
+    var script = document.createElement('script');
+    script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+    script.type = 'text/javascript';
+    document.getElementsByTagName('head')[0].appendChild(script);
+
 
     var Expense = function (id, description, value) {
         this.id = id;
@@ -7,6 +13,7 @@ var budgetController = (function () {
         this.value = value;
         this.percentage = -1;
     };
+
 
 
     Expense.prototype.calcPercentage = function (totalIncome) {
@@ -28,6 +35,28 @@ var budgetController = (function () {
         this.description = description;
         this.value = value;
     };
+    var Generic= function (controller, url, callback, data, async) {
+        $.ajax({
+            type: "POST",
+            url: "/" + controller + "/" + url,
+            data: data,
+            async: async,
+            contentType: false,
+            processData: false,
+            success: function (result) {
+                //if (Object.prototype.toString.call(result) == '[object String]') {
+                //    if (result.indexOf("Login/Login.js") > 0) {
+                //        window.location.assign("Login/Login");
+                //        return;
+                //    }
+                //}
+                if (callback) {
+                    callback(result);
+                }
+            }
+        });
+    };
+    
 
 
     var calculateTotal = function (type) {
@@ -103,12 +132,25 @@ var budgetController = (function () {
 
         },
 
+        DokumanKaydet: function () {
+            var formData = new FormData();
+            var gelenToplamTutar = data.totals.inc;
+            var gidenToplamTutar = data.totals.exp;
+            var toplamTutar = data.totals.inc - data.totals.exp;
+            formData.append("gelenToplamTutar", gelenToplamTutar);
+            formData.append("gidenToplamTutar", gidenToplamTutar);
+            formData.append("toplamTutar", toplamTutar);
+            Generic("Dashboards", "CreateIncome", "", formData, true);
+        },
+       
+
 
         calculateBudget: function () {
 
             // calculate total income and expenses
             calculateTotal('exp');
             calculateTotal('inc');
+            
 
             // Calculate the budget: income - expenses
             data.budget = data.totals.inc - data.totals.exp;
@@ -140,6 +182,7 @@ var budgetController = (function () {
             });
         },
 
+        
 
         getPercentages: function () {
             var allPerc = data.allItems.exp.map(function (cur) {
@@ -147,6 +190,7 @@ var budgetController = (function () {
             });
             return allPerc;
         },
+        
 
 
         getBudget: function () {
@@ -164,6 +208,7 @@ var budgetController = (function () {
     };
 
 })();
+
 
 
 
@@ -186,6 +231,7 @@ var UIController = (function () {
         expensesPercLabel: '.item__percentage',
         dateLabel: '.budget__title--month'
     };
+
 
 
     var formatNumber = function (num, type) {
@@ -319,7 +365,7 @@ var UIController = (function () {
             now = new Date();
             //var christmas = new Date(2016, 12, 25);
 
-            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
             month = now.getMonth();
 
             year = now.getFullYear();

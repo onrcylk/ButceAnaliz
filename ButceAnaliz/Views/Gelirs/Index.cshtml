@@ -60,7 +60,7 @@
             <div class="income">
                 <h2 class="income__title">Gelir</h2>
 
-                <div class="income__list">
+                <div id="incomeList" class="income__list">
                 </div>
             </div>
 
@@ -68,9 +68,11 @@
             <div class="expenses">
                 <h2 class="expenses__title">Gider</h2>
 
-                <div class="expenses__list">
+                <div id="expensesList" class="expenses__list">
                 </div>
             </div>
+
+            <button class="add__btn" onclick="budgetController.DokumanKaydet()">Kaydet</button>
         </div>
     </div>
     <script src="~/js/income.js"></script>

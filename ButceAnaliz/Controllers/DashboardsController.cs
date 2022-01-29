@@ -64,6 +64,29 @@ namespace ButceAnaliz.Controllers
             return View(dashboard);
         }
 
+        [HttpPost]
+       
+        public async Task<IActionResult> CreateIncome(int gelenToplamTutar,int gidenToplamTutar,int toplamTutar)
+        {
+            var dashboardUser = _context.Users.FirstOrDefault(x => x.Email == User.Identity.Name);
+            Dashboard dashboard = new Dashboard
+            {
+                ToplamTutar = toplamTutar,
+                GelenToplamTutar = gelenToplamTutar,
+                GidenToplamTutar = gidenToplamTutar,
+                KayitTarihi = DateTime.Now,
+                User = dashboardUser,
+            };
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(dashboard);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(dashboard);
+        }
+
         // GET: Dashboards/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
